@@ -46,20 +46,7 @@
             const files = [
                 'Files/ES216BB_Evaluation1.pdf',
                 'Files/EV1_Showcase.old',
-                'Files/StudentNumber.cpp'
-            ];
-
-            files.forEach(file => {
-                const a = document.createElement('a');
-                a.href = file;
-                a.download = file.split('/').pop();
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            });
-        }
-        function downloadTextFile() {
-            const files = [
+                'Files/StudentNumber.cpp',
                 'Files/records.txt'
             ];
 
@@ -82,11 +69,6 @@
         <div class="section">
             <h2>Evaluation File Download</h2>
             <button class="download-button" onclick="downloadFiles()">Download Files</button>
-        </div>
-        
-        <div class="section">
-            <h2>Text File Download</h2>
-            <button class="download-button" onclick="downloadTextFile()">Download Text File</button>
         </div>
 
         <div class="section">
