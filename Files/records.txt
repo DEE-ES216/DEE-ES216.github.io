@@ -1,0 +1,9 @@
+Gauteng 29000.75
+WesternCape 15000.45
+KwaZuluNatal 13500.30
+EasternCape 8500.50
+Limpopo 7500.00
+Mpumalanga 12000.65
+FreeState 6000.80
+NorthWest 5500.20
+NorthernCape 3500.10
