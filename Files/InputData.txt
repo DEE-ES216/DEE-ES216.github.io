@@ -1,0 +1,6 @@
+RoofSensor	41.99
+KitchenSensor	78.22
+BatterySensor	67
+GarageSensor	44.11
+OutdoorSensor	32
+
