@@ -40,37 +40,75 @@
         .download-button:hover, .upload-button:hover {
             background-color: #0056b3;
         }
+        #countdown {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
     </style>
     <script>
-        function downloadFiles() {
-            const files = [
-                'Files/ES216BB_EV2.pdf',
-                'Files/EV2_Showcase.old',
-                'Files/StudentNumber.cpp',
-                'Files/InputData.txt'
-            ];
+        // Countdown Timer
+        function startCountdown() {
+            const eventDate = new Date('October 31, 2024 21:00:00 GMT+0200').getTime();
+            const countdownElement = document.getElementById('countdown');
 
-            files.forEach(file => {
-                const a = document.createElement('a');
-                a.href = file;
-                a.download = file.split('/').pop();
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            });
+            const timer = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    countdownElement.innerHTML = "Event Started!";
+                    return;
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            }, 1000);
         }
+
+        // Password-protected download
+        function downloadFilesWithPassword() {
+            const password = prompt("Enter the download password:");
+            if (password === "asdf1234") {
+                const files = [
+                    'Files/ES216BB_EV2.pdf',
+                    'Files/EV2_Showcase.old',
+                    'Files/StudentNumber.cpp',
+                    'Files/InputData.txt'
+                ];
+
+                files.forEach(file => {
+                    const a = document.createElement('a');
+                    a.href = file;
+                    a.download = file.split('/').pop();
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                });
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+
+        // Start countdown on page load
+        window.onload = startCountdown;
     </script>
 </head>
 <body>
     <div class="container">
         <img src="TUTLogo.png" alt="Heading Image"/>
         <h1>ES216 Evaluation 2</h1>
-        
+
+        <div id="countdown"></div> <!-- Countdown Timer -->
+
         <div class="section">
             <h2>Evaluation File Download</h2>
             <p>Important! Allow multiple downloads - 4 files in total</p>
-            <!--<button class="download-button" onclick="">Download Files</button>-->
-            <button class="download-button" onclick="downloadFiles()">Download Files</button>
+            <button class="download-button" onclick="downloadFilesWithPassword()">Download Files</button>
         </div>
 
         <div class="section">
