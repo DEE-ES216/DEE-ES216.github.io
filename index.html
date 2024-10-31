@@ -61,7 +61,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("October 31, 2024 21:00:00 GMT+0200").getTime();
+            const countdownDate = new Date("November 1, 2024 10:05:00 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -77,7 +77,7 @@
 
                 if (distance < 0) {
                     clearInterval(interval);
-                    document.getElementById("countdown").innerHTML = "The event has started!";
+                    document.getElementById("countdown").innerHTML = "Evaluation Closed";
                 }
             }, 1000);
         }
