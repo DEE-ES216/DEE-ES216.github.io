@@ -13,6 +13,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
+            display: none; /* Hide container until password is validated */
         }
         img {
             width: 100%;
@@ -42,73 +43,83 @@
         }
         #countdown {
             font-size: 24px;
-            color: #333;
             margin-top: 20px;
+            color: #333;
         }
     </style>
     <script>
+        // Password protection
+        function passwordPrompt() {
+            const password = prompt("Please enter the password:");
+            if (password === "asdf1234") {
+                document.querySelector('.container').style.display = 'block';
+            } else {
+                alert("Incorrect password! Reloading...");
+                location.reload();
+            }
+        }
+
         // Countdown Timer
         function startCountdown() {
-            const eventDate = new Date('October 31, 2024 21:00:00 GMT+0200').getTime();
-            const countdownElement = document.getElementById('countdown');
+            const countdownDate = new Date("Nov 1, 2024 08:00:00 GMT+0200").getTime();
 
-            const timer = setInterval(function () {
+            const interval = setInterval(function() {
                 const now = new Date().getTime();
-                const distance = eventDate - now;
+                const distance = countdownDate - now;
 
-                if (distance < 0) {
-                    clearInterval(timer);
-                    countdownElement.innerHTML = "Event Started!";
-                    return;
-                }
-
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                countdownElement.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    document.getElementById("countdown").innerHTML = "The event has started!";
+                }
             }, 1000);
         }
 
-        // Password-protected download
-        function downloadFilesWithPassword() {
-            const password = prompt("Enter the download password:");
-            if (password === "asdf1234") {
-                const files = [
-                    'Files/ES216BB_EV2.pdf',
-                    'Files/EV2_Showcase.old',
-                    'Files/StudentNumber.cpp',
-                    'Files/InputData.txt'
-                ];
-
-                files.forEach(file => {
-                    const a = document.createElement('a');
-                    a.href = file;
-                    a.download = file.split('/').pop();
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                });
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
+        // Initiate password prompt and countdown timer
+        window.onload = function() {
+            passwordPrompt();
+            startCountdown();
         }
 
-        // Start countdown on page load
-        window.onload = startCountdown;
+        // Download function
+        function downloadFiles() {
+            const files = [
+                'Files/ES216BB_EV2.pdf',
+                'Files/EV2_Showcase.old',
+                'Files/StudentNumber.cpp',
+                'Files/InputData.txt'
+            ];
+
+            files.forEach(file => {
+                const a = document.createElement('a');
+                a.href = file;
+                a.download = file.split('/').pop();
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        }
     </script>
 </head>
 <body>
     <div class="container">
         <img src="TUTLogo.png" alt="Heading Image"/>
         <h1>ES216 Evaluation 2</h1>
-
-        <div id="countdown"></div> <!-- Countdown Timer -->
-
+        
+        <!-- Countdown Timer -->
+        <div id="countdown"></div>
+        
         <div class="section">
             <h2>Evaluation File Download</h2>
             <p>Important! Allow multiple downloads - 4 files in total</p>
-            <button class="download-button" onclick="downloadFilesWithPassword()">Download Files</button>
+            <button class="download-button" onclick="downloadFiles()">Download Files</button>
         </div>
 
         <div class="section">
