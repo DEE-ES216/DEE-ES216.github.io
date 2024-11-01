@@ -22,7 +22,7 @@ using namespace std;
 /// Class Header File - Change to you student Number
 //------------------------------------------------------------------------------//
 
-#include "CinemaBooking.h" // #include "123456789.h"
+#include "FlightBooking.h" // #include "123456789.h"
 
 //------------------------------------------------------------------------------//
 /// MAIN FUNCTION - Do Not Modify
@@ -31,32 +31,32 @@ int main (void)
 {
     int choice;
 
-    CinemaBooking Cinema;
+    FlightBooking Flight;
 
-    string Cinema_Name = "CinemaOne";
-    string Cinema_MovieName = "Life of TUT";
-    int Cinema_MaxSeats = 12;
-    float TicketPrice = 29.90;
+    string Flight_Number = "CA140";
+    string Flight_DestinationName = "Durban - King Shaka Airport";
+    int Flight_MaxSeats = 12;
+    float TicketPrice = 590.20;
 
     ifstream BookingFile;
-    string Cinema_Bookings = "Bookings.txt";
-    string ClientName;
+    string Flight_Bookings = "Bookings.txt";
+    string PassengerName;
 
-    Cinema.SetDetails(Cinema_Name,Cinema_MovieName,Cinema_MaxSeats);
+    Flight.SetDetails(Flight_Number,Flight_DestinationName,Flight_MaxSeats);
 
     do
     {
         system("cls");
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
-        cout << "   Cinema Booking Platform" << endl;
+        cout << "   Flight Booking Platform" << endl;
         cout << "   ES216BB" << endl;
         cout << "   Evaluation 3" << endl;
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
         cout << endl;
-        cout << "1. Display Cinema Details" << endl;
-        cout << "2. Load Cinema Client Bookings " << endl;
-        cout << "3. Display Cinema Clients" << endl;
-        cout << "4. Display Cinema Profit" << endl;
+        cout << "1. Display Flight Details" << endl;
+        cout << "2. Load Flight Passenger Bookings " << endl;
+        cout << "3. Display Flight Passengers" << endl;
+        cout << "4. Display Flight Profit" << endl;
         cout << "5. Exit" << endl;
         cout << "Choice: ";
         cin >> choice;
@@ -65,23 +65,25 @@ int main (void)
         switch (choice)
         {
             case 1:
-                Cinema.DisplayCinemaDetails();
+                Flight.DisplayFlightDetails();
                 cout << endl;
                 break;
             case 2:
                 cout << "All possible bookings loaded" << endl;
-                BookingFile.open(Cinema_Bookings);
-                while ( BookingFile >> ClientName ) //end of file
-                    Cinema.AddClient(ClientName);
+
+                BookingFile.open(Flight_Bookings);
+                while ( BookingFile >> PassengerName ) //end of file
+                    Flight.AddPassenger(PassengerName);
                 BookingFile.close();
+
                 cout << endl;
                 break;
             case 3:
-                Cinema.DisplayClientList();
+                Flight.DisplayPassengerList();
                 cout << endl;
                 break;
             case 4:
-                cout << "Cinema Profit: R" << Cinema.CinemaProfit(TicketPrice) << endl;
+                cout << "Flight Profit: R" << Flight.FlightProfit(TicketPrice) << endl;
                 cout << endl;
                 break;
             case 5:
