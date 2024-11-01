@@ -81,11 +81,19 @@
                 }
             }, 1000);
         }
+        
+        // Auto-refresh function
+        function autoRefresh() {
+            setInterval(function() {
+                location.reload();
+            }, 300000); // Refreshes every 5 minutes
+        }
 
         // Initiate password prompt and countdown timer
         window.onload = function() {
             passwordPrompt();
             startCountdown();
+            autoRefresh();
         }
 
         // Download function
