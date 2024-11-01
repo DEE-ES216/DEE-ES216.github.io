@@ -15,6 +15,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <cstdlib>
 
 using namespace std;
 
@@ -71,7 +72,7 @@ int main (void)
             case 2:
                 cout << "All possible bookings loaded" << endl;
 
-                BookingFile.open(Flight_Bookings);
+                BookingFile.open(Flight_Bookings.c_str());
                 while ( BookingFile >> PassengerName ) //end of file
                     Flight.AddPassenger(PassengerName);
                 BookingFile.close();
