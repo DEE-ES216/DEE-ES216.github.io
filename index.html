@@ -51,7 +51,7 @@
         // Password protection
         function passwordPrompt() {
             const password = prompt("Please enter the password:");
-            if (password === "12341234") {
+            if (password === "01350135") {
                 document.querySelector('.container').style.display = 'block';
             } else {
                 alert("Incorrect password! Reloading...");
@@ -61,7 +61,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("March 13, 2025 16:15:00 GMT+0200").getTime();
+            const countdownDate = new Date("March 18, 2025 12:45:00 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -90,12 +90,9 @@
         // Download function
         function downloadFiles() {
             const files = [
-                'Files/ES216BBEV3.pdf',
-                'Files/StudentNumber.h',
-                'Files/Evaluation3.cpp',
-                'Files/EV3_Showcase.old',
-                'Files/Bookings.txt',
-                'Files/ExampleScreenShot.png',
+                'Files/ES216AB EV1A.pdf',
+                'Files/ES216AB_EV1A.old',
+                'Files/StudentNumber.c',
             ];
 
             files.forEach(file => {
@@ -112,7 +109,7 @@
 <body>
     <div class="container">
         <img src="TUTLogo.png" alt="Heading Image"/>
-        <h1>ES216 Evaluation 3 MakeUp</h1>
+        <h1>ES216 Evaluation 1 2025</h1>
         
         <!-- Countdown Timer -->
         <div id="countdown"></div>
@@ -121,18 +118,15 @@
             <h2>Evaluation File Download</h2>
             <p>Important! Allow multiple downloads - 6 files in total</p>
             <p>
-            - ES216BBEV3.pdf -<br>
-            - StudentNumber.h -<br>
-            - Evaluation3.cpp -<br>
-            - EV3_Showcase.old -<br>
-            - Bookings.txt -<br>
-            - ExampleScreenShot.png -</p>
+            - ES216AB EV1A.pdf -<br>
+            - ES216AB_EV1A.old -<br>
+            - StudentNumber.c -<br>
             <button class="download-button" onclick="downloadFiles()">Download Files</button>
         </div>
 
         <div class="section">
             <h2>Evaluation File Submission</h2>
-            <a href="https://es216.fillout.com/t/p6KMNpwDinus" target="_blank" class="upload-button">Upload Files</a>
+            <a href="https://es216.fillout.com/t/jnipEM87thus" target="_blank" class="upload-button">Upload Files</a>
         </div>
     </div>
 </body>
