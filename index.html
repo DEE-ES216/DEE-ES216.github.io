@@ -51,7 +51,7 @@
         // Password protection
         function passwordPrompt() {
             const password = prompt("Please enter the password:");
-            if (password === "98761234") {
+            if (password === "122333") {
                 document.querySelector('.container').style.display = 'block';
             } else {
                 alert("Incorrect password! Reloading...");
@@ -61,7 +61,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("March 18, 2025 14:30:00 GMT+0200").getTime();
+            const countdownDate = new Date("April 7, 2025 11:10:00 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -88,11 +88,37 @@
         }
 
         // Download function
-        function downloadFiles() {
+        function downloadFiles1() {
             const files = [
-                'Files/ES216AB EV1C.pdf',
-                'Files/ES216AB_EV1C.old',
+                'Files/ES216AB_EV2.pdf',
+            ];
+
+            files.forEach(file => {
+                const a = document.createElement('a');
+                a.href = file;
+                a.download = file.split('/').pop();
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        }
+        function downloadFiles2() {
+            const files = [
                 'Files/StudentNumber.c',
+            ];
+
+            files.forEach(file => {
+                const a = document.createElement('a');
+                a.href = file;
+                a.download = file.split('/').pop();
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        }
+        function downloadFiles3() {
+            const files = [
+                'Files/Showcase.old',
             ];
 
             files.forEach(file => {
@@ -108,8 +134,8 @@
 </head>
 <body>
     <div class="container">
-        <img src="TUTLogo.png" alt="Heading Image"/>
-        <h1>ES216 Evaluation 1 2025</h1>
+        <img src="TUTLogo.jpg" alt="Heading Image"/>
+        <h1>ES216 Evaluation</h1>
         
         <!-- Countdown Timer -->
         <div id="countdown"></div>
@@ -118,10 +144,14 @@
             <h2>Evaluation File Download</h2>
             <p>Important! Allow multiple downloads - 3 files in total</p>
             <p>
-            - ES216AB EV1C.pdf -<br>
-            - ES216AB_EV1C.old -<br>
+            - ES216AB_EV2.pdf -<br>
+            <button class="download-button" onclick="downloadFiles1()">Download PDF</button>
+            <p>
             - StudentNumber.c -<br>
-            <button class="download-button" onclick="downloadFiles()">Download Files</button>
+            <button class="download-button" onclick="downloadFiles2()">Download C Template</button>
+            <p>
+            - Showcase.old -<br>
+            <button class="download-button" onclick="downloadFiles3()">Download Showcase EXE</button>
         </div>
 
         <div class="section">
