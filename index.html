@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES216 Evaluation</title>
+    <title>ES216 EV</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,7 +51,7 @@
         // Password protection
         function passwordPrompt() {
             const password = prompt("Please enter the password:");
-            if (password === "122333444455555") {
+            if (password === "20252025") {
                 document.querySelector('.container').style.display = 'block';
             } else {
                 alert("Incorrect password! Reloading...");
@@ -61,7 +61,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("April 7, 2025 11:20:00 GMT+0200").getTime();
+            const countdownDate = new Date("May 23, 2025 14:30:00 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -90,7 +90,7 @@
         // Download function
         function downloadFiles1() {
             const files = [
-                'Files/ES216AB_EV2.pdf',
+                'Files/ES216AB EV3_B.pdf',
             ];
 
             files.forEach(file => {
@@ -104,21 +104,7 @@
         }
         function downloadFiles2() {
             const files = [
-                'Files/StudentNumber.c',
-            ];
-
-            files.forEach(file => {
-                const a = document.createElement('a');
-                a.href = file;
-                a.download = file.split('/').pop();
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            });
-        }
-        function downloadFiles3() {
-            const files = [
-                'Files/Showcase.old',
+                'Files/EV3_Template.c',
             ];
 
             files.forEach(file => {
@@ -135,7 +121,7 @@
 <body>
     <div class="container">
         <img src="TUTLogo.jpg" alt="Heading Image"/>
-        <h1>ES216 Evaluation</h1>
+        <h1>Engineering Software Design Evaluation</h1>
         
         <!-- Countdown Timer -->
         <div id="countdown"></div>
@@ -143,19 +129,18 @@
         <div class="section">
             <h2>Evaluation File Download</h2>
             <p>
-            - ES216AB_EV2.pdf -<br>
-            <button class="download-button" onclick="downloadFiles1()">Download PDF</button>
+            - ES216AB_EV3_B.pdf -<br>
+            <button class="download-button" onclick="downloadFiles1()">Download Question Paper</button>
             <p>
-            - StudentNumber.c -<br>
-            <button class="download-button" onclick="downloadFiles2()">Download C Template</button>
+            - EV3_Template.c -<br>
+            <button class="download-button" onclick="downloadFiles2()">Download Template File</button>
             <p>
-            - Showcase.old -<br>
-            <button class="download-button" onclick="downloadFiles3()">Download Showcase EXE</button>
+
         </div>
 
         <div class="section">
             <h2>Evaluation File Submission</h2>
-            <a href="https://es216.fillout.com/t/vg9S11Cj9bus" target="_blank" class="upload-button">Upload File</a>
+            <a href="https://es216.fillout.com/t/599cUiKckWus" target="_blank" class="upload-button">Upload File</a>
         </div>
     </div>
 </body>
