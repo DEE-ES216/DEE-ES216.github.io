@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------//
-/// STUDENT AND EVALUATION DETAILS - Complete Student Detail
+/// STUDENT AND EVALUATION DETAILS - Complete
 //------------------------------------------------------------------------------//
 /// Student Number:
 /// Date:
@@ -29,46 +29,46 @@
 using namespace std;
 
 //------------------------------------------------------------------------------//
-/// EMPLOYEE STRUCTURE - Do not modify
+/// INVENTORY ITEM STRUCTURE - Do not modify
 //------------------------------------------------------------------------------//
-struct Employee
+struct InventoryItem
 {
-    int employeeID;
-    string employeeName;
-    float hoursWorked;
-    float hourlyRate;
-    void InitialiseEmployeeRecord(int id, string name, float hours, float rate);
+    int itemID;
+    string itemName;
+    int quantity;
+    float unitPrice;
+    void InitialiseInventoryItem(int id, string name, int qty, float price);
 };
 
 //------------------------------------------------------------------------------//
 /// FUNCTION PROTOTYPES - Do not modify
 //------------------------------------------------------------------------------//
 int TextFileLineCount(string fileName);
-void ReadFileAndPopulate(string fileName, Employee **employees, int *arraySize);
-float CalculateTotalPayroll(Employee *employees, int arraySize);
-void DisplayAllEmployees(Employee *employees, int arraySize);
-void DisplayOvertimeEmployees(Employee *employees, int arraySize);
-void DeleteEmployeeArray(Employee **employees, int *arraySize);
+void ReadFileAndPopulate(string fileName, InventoryItem **inventory, int *arraySize);
+float CalculateTotalInventoryValue(InventoryItem *inventory, int arraySize);
+void DisplayAllInventoryItems(InventoryItem *inventory, int arraySize);
+void DisplayLowStockItems(InventoryItem *inventory, int arraySize, int threshold);
+void DeleteInventoryArray(InventoryItem **inventory, int *arraySize);
 
 //------------------------------------------------------------------------------//
 /// MAIN FUNCTION - Do not modify
 //------------------------------------------------------------------------------//
 int main(void)
 {
-    Employee *employees = nullptr;
-    int arraySize = 0, choice;
+    InventoryItem *inventory = nullptr;
+    int arraySize = 0, choice, threshold;
     string fileName;
 
     do
     {
         system("cls");
-        cout << "--------------------------------------" << endl;
-        cout << "        Employee Payroll System       " << endl;
-        cout << "--------------------------------------" << endl;
-        cout << "1. Load employee data from file" << endl;
-        cout << "2. Calculate total payroll amount" << endl;
-        cout << "3. Display all employee records" << endl;
-        cout << "4. Display employees with overtime" << endl;
+        cout << "------------------------------------" << endl;
+        cout << "     Inventory Management System    " << endl;
+        cout << "------------------------------------" << endl;
+        cout << "1. Load inventory data from file" << endl;
+        cout << "2. Calculate total inventory value" << endl;
+        cout << "3. Display all inventory items" << endl;
+        cout << "4. Display low-stock items" << endl;
         cout << "5. Delete data and exit" << endl;
         cout << "Choice: ";
         cin >> choice;
@@ -78,27 +78,29 @@ int main(void)
             case 1:
                 cout << "\nFile Name: ";
                 cin >> fileName;
-                ReadFileAndPopulate(fileName, &employees, &arraySize);
+                ReadFileAndPopulate(fileName, &inventory, &arraySize);
                 cout << "\nPress any key to continue...";
                 _getch();
                 break;
             case 2:
-                cout << "\nTotal Payroll Amount: $" << CalculateTotalPayroll(employees, arraySize) << endl;
+                cout << "\nTotal Inventory Value: $" << CalculateTotalInventoryValue(inventory, arraySize) << endl;
                 cout << "\nPress any key to continue...";
                 _getch();
                 break;
             case 3:
-                DisplayAllEmployees(employees, arraySize);
+                DisplayAllInventoryItems(inventory, arraySize);
                 cout << "\nPress any key to continue...";
                 _getch();
                 break;
             case 4:
-                DisplayOvertimeEmployees(employees, arraySize);
+                cout << "\nEnter threshold quantity: ";
+                cin >> threshold;
+                DisplayLowStockItems(inventory, arraySize, threshold);
                 cout << "\nPress any key to continue...";
                 _getch();
                 break;
             case 5:
-                DeleteEmployeeArray(&employees, &arraySize);
+                DeleteInventoryArray(&inventory, &arraySize);
                 cout << "\nExiting program...\n";
                 break;
             default:
@@ -115,51 +117,50 @@ int main(void)
 //------------------------------------------------------------------------------//
 /// FUNCTION IMPLEMENTATION
 //------------------------------------------------------------------------------//
-// 1. Initialise Employee Record Function
+/// 1. Initialise Inventory Item Function
 //------------------------------------------------------------------------------//
 
 
 
 
 //------------------------------------------------------------------------------//
-// 2. Text File Line Count Function
+/// 2. Text File Line Count Function
 //------------------------------------------------------------------------------//
 
 
 
 
 //------------------------------------------------------------------------------//
-// 3. Read File And Populate Function
+/// 3. Read File And Populate Function
 //------------------------------------------------------------------------------//
 
 
 
 
 //------------------------------------------------------------------------------//
-// 4. Calculate Total Payroll Function
+/// 4. Calculate Total Inventory Value Function
 //------------------------------------------------------------------------------//
 
 
 
 
 //------------------------------------------------------------------------------//
-// 5. Display All Employees Function
+/// 5. Display All Inventory Items Function
 //------------------------------------------------------------------------------//
 
 
 
 
 //------------------------------------------------------------------------------//
-// 6. Display Overtime Employees Function
+/// 6. Display Low Stock Items Function
 //------------------------------------------------------------------------------//
 
 
 
 
 //------------------------------------------------------------------------------//
-// 7. Delete Employee Array Function
+/// 7. Delete Inventory Array Function
 //------------------------------------------------------------------------------//
-
 
 
 
