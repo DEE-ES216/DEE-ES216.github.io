@@ -51,7 +51,7 @@
         // Password protection
         function passwordPrompt() {
             const password = prompt("Please enter the password:");
-            if (password === "123123123") {
+            if (password === "123123123123") {
                 document.querySelector('.container').style.display = 'block';
             } else {
                 alert("Incorrect password! Reloading...");
@@ -158,6 +158,12 @@
                 document.body.removeChild(a);
             });
         }
+        
+        // Auto-refresh every 5 minutes (300000 ms)
+        setTimeout(function() {
+            location.reload();
+            }, 300000); // 5 minutes in milliseconds
+
     </script>
 </head>
 <body>
