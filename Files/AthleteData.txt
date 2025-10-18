@@ -1,5 +1,0 @@
-John100m 100m 9.58 1.02
-Jane200m 200m 21.34 0.98
-Bob400m 400m 45.00 1.05
-Alice800m 800m 120.0 1.01
-TomMarathon Marathon 7545.0 1.15

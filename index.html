@@ -61,7 +61,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("Sep 08, 2025 10:40:00 GMT+0200").getTime();
+            const countdownDate = new Date("Oct 20, 2025 12:35:00 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -90,7 +90,7 @@
         // Download function
         function downloadFiles1() {
             const files = [
-                'Files/ES216BB_Evaluation2.pdf',
+                'Files/ES216BB_Evaluation_3A.pdf',
             ];
 
             files.forEach(file => {
@@ -104,7 +104,7 @@
         }
         function downloadFiles2() {
             const files = [
-                'Files/ES216BB_Evaluation2_Template.cpp',
+                'Files/ES216BB_Evaluation3A.cpp',
             ];
 
             files.forEach(file => {
@@ -118,7 +118,7 @@
         }
         function downloadFiles3() {
             const files = [
-                'Files/AthleteData.txt',
+                'Files/ES216BB_Evaluation3A_TemplateHeader.h',
             ];
 
             files.forEach(file => {
@@ -132,7 +132,20 @@
         }
         function downloadFiles4() {
             const files = [
-                'Files/ES216BB_Evaluation2_Showcase.old',
+                'Files/TextFile_ConferenceRegistration.txt',
+            ];
+
+            files.forEach(file => {
+                const a = document.createElement('a');
+                a.href = file;
+                a.download = file.split('/').pop();
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        function downloadFiles5() {
+            const files = [
+                'Files/ES216BB_Evaluation3A.old',
             ];
 
             files.forEach(file => {
@@ -166,16 +179,20 @@
             <button class="download-button" onclick="downloadFiles1()">Download Question Paper</button>
             
             <p>
-            - Evaluation Template CPP File -<br>
-            <button class="download-button" onclick="downloadFiles2()">Download Template File</button>
+            - Evaluation CPP File -<br>
+            <button class="download-button" onclick="downloadFiles2()">Download CPP File</button>
             
             <p>
-            - Evaluation Demo Text File -<br>
-            <button class="download-button" onclick="downloadFiles3()">Download Text File</button>
+            - Evaluation Template H File -<br>
+            <button class="download-button" onclick="downloadFiles3()">Download Template H File</button>    
             
             <p>
-            - Evaluation Demo Showcase File -<br>
-            <button class="download-button" onclick="downloadFiles4()">Download Showcase File</button>
+            - Evaluation Text File -<br>
+            <button class="download-button" onclick="downloadFiles4()">Download Text File</button>
+            
+            <p>
+            - Evaluation Showcase EXE File -<br>
+            <button class="download-button" onclick="downloadFiles5()">Download Showcase EXE File</button>
 
 
         </div>
@@ -183,8 +200,13 @@
         <div class="section">
             <h2>Evaluation File Submission</h2>
                    
+            <!-- Session A -->
+            <div data-fillout-id="hYo6CgWbPjus" data-fillout-embed-type="popup" data-fillout-button-text="Submission Link" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
             
-            <div data-fillout-id="humvUpp7U2us" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
+            <!-- Session B -->
+            <!--
+            <div data-fillout-id="usqLqQtAwrus" data-fillout-embed-type="popup" data-fillout-button-text="Submission Link" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
+            -->
             
             
         </div>
