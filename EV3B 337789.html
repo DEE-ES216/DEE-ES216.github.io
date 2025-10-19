@@ -166,9 +166,10 @@
         
         // Auto-refresh every 5 minutes (300000 ms)
         setTimeout(function() {
+            alert("Session Expired");
             location.reload();
-            }, 60000); // 1 minute in milliseconds
-            //}, 300000); // 5 minutes in milliseconds
+            //}, 60000); // 1 minute in milliseconds
+            }, 600000); // 5 minutes in milliseconds
 
     </script>
 </head>
