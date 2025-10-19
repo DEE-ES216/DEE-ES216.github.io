@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES216 EV</title>
+    <title>ES216BB Evaluation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             /*display: none;*/ /* Hide container until password is validated */
         }
@@ -48,7 +48,12 @@
         }
     </style>
     <script>
+        
+        // Encrypt Webpage 
+        // StatiCrypt webpage: https://robinmoisson.github.io/staticrypt/
+        
         // Password protection
+        // Uncomment: JScript "window.onload" function and CSS "display: none" 
         /*function passwordPrompt() {
             const password = prompt("Please enter the password:");
             if (password === "123qwe") {
@@ -104,7 +109,7 @@
         }
         function downloadFiles2() {
             const files = [
-                'Files/ES216BB_Evaluation3A.cpp',
+                'Files/ES216BB_Evaluation3A_TemplateHeader.h',
             ];
 
             files.forEach(file => {
@@ -118,7 +123,7 @@
         }
         function downloadFiles3() {
             const files = [
-                'Files/ES216BB_Evaluation3A_TemplateHeader.h',
+                'Files/ES216BB_Evaluation3A.cpp',
             ];
 
             files.forEach(file => {
@@ -180,41 +185,44 @@
         
         <div class="section">
             
-            <h2>Evaluation File Download</h2>
-            
-            <p>  
+            <h3>Evaluation 3B File Download</h3>
+             
+            <!--
             - Evaluation Question Paper -<br>
-            <button class="download-button" onclick="downloadFiles1()">Question Paper</button>
-            
-            <p>
             - Evaluation CPP File -<br>
-            <button class="download-button" onclick="downloadFiles2()">CPP File</button>
-            
-            <p>
             - Evaluation Template H File -<br>
-            <button class="download-button" onclick="downloadFiles3()">Template H File</button>    
-            
-            <p>
             - Evaluation Text File -<br>
-            <button class="download-button" onclick="downloadFiles4()">Text File</button>
-            
-            <p>
             - Evaluation Showcase EXE File -<br>
-            <button class="download-button" onclick="downloadFiles5()">Showcase EXE File</button>
+            -->
+            
+            <button class="download-button" onclick="downloadFiles1()"><b>Question Paper </b></button>
+            &nbsp;&nbsp;
+            
+            <button class="download-button" onclick="downloadFiles2()"><b>Template H File</b></button>
+            &nbsp;&nbsp;
+            
+            <button class="download-button" onclick="downloadFiles3()"><b>Demo CPP File  </b></button>
+            &nbsp;&nbsp;
+
+            <button class="download-button" onclick="downloadFiles4()"><b>Demo TXT File  </b></button>
+            &nbsp;&nbsp;
+            
+            <button class="download-button" onclick="downloadFiles5()"><b>Demo EXE File  </b></button>
 
 
         </div>
 
         <div class="section">
-            <h2>Evaluation File Submission</h2>
+            <h3>Evaluation 3B Submission</h3>
                    
             <!-- Session A -->
-            <div data-fillout-id="hYo6CgWbPjus" data-fillout-embed-type="popup" data-fillout-button-text="Submission Link" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
-            
-            <!-- Session B -->
             <!--
-            <div data-fillout-id="usqLqQtAwrus" data-fillout-embed-type="popup" data-fillout-button-text="Submission Link" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
+            <div data-fillout-id="hYo6CgWbPjus" data-fillout-embed-type="popup" data-fillout-button-text="Submission Link" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
             -->
+
+            <!-- Session B -->
+            <div data-fillout-id="usqLqQtAwrus" data-fillout-embed-type="popup" data-fillout-button-text="Submission Link" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
+            
             
             
         </div>
