@@ -28,32 +28,32 @@ int main(void)
 {
     int choice;
 
-    ConferenceRegistration Conference;
+    CourseEnrollment Course;
 
-    string Conference_Title = "AI Summit 2024";
-    string Conference_Location = "Sandton Convention Centre";
-    int Conference_MaxAttendees = 12;
-    float RegistrationFee = 1500.00;
+    string Course_Code = "INF101";
+    string Course_Title = "Introduction to Information Systems";
+    int Course_MaxStudents = 12;
+    float EnrollmentFee = 1200.00;
 
     ifstream BookingFile;
-    string Registration_File = "TextFile_ConferenceRegistration.txt";
-    string AttendeeName;
+    string Enrollment_File = "TextFile_CourseEnrollment.txt";
+    string StudentName;
 
-    Conference.SetDetails(Conference_Title, Conference_Location, Conference_MaxAttendees);
+    Course.SetDetails(Course_Code, Course_Title, Course_MaxStudents);
 
     do
     {
         system("cls");
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
-        cout << "   Conference Registration System" << endl;
+        cout << "   Course Enrollment System" << endl;
         cout << "   ES216BB" << endl;
         cout << "   Evaluation 3" << endl;
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
         cout << endl;
-        cout << "1. Display Conference Details" << endl;
-        cout << "2. Load Attendee Registrations" << endl;
-        cout << "3. Display Attendee List" << endl;
-        cout << "4. Display Registration Revenue" << endl;
+        cout << "1. Display Course Details" << endl;
+        cout << "2. Load Student Enrollments" << endl;
+        cout << "3. Display Student List" << endl;
+        cout << "4. Display Enrollment Revenue" << endl;
         cout << "5. Exit" << endl;
         cout << "Choice: ";
         cin >> choice;
@@ -62,25 +62,25 @@ int main(void)
         switch (choice)
         {
             case 1:
-                Conference.DisplayConferenceDetails();
+                Course.DisplayCourseDetails();
                 cout << endl;
                 break;
             case 2:
-                cout << "All possible registrations loaded" << endl;
+                cout << "All possible enrollments loaded" << endl;
 
-                BookingFile.open(Registration_File);
-                while (BookingFile >> AttendeeName)
-                    Conference.AddAttendee(AttendeeName);
+                BookingFile.open(Enrollment_File);
+                while (BookingFile >> StudentName)
+                    Course.AddStudent(StudentName);
                 BookingFile.close();
 
                 cout << endl;
                 break;
             case 3:
-                Conference.DisplayAttendeeList();
+                Course.DisplayStudentList();
                 cout << endl;
                 break;
             case 4:
-                cout << "Registration Revenue: R" << Conference.RegistrationRevenue(RegistrationFee) << endl;
+                cout << "Enrollment Revenue: R" << Course.EnrollmentRevenue(EnrollmentFee) << endl;
                 cout << endl;
                 break;
             case 5:
