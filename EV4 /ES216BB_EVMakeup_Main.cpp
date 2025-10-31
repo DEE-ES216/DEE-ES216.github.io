@@ -17,7 +17,7 @@ using namespace std;
 /// HEADER FILE - CHANGE TO STUDENT NUMBER (e.g. "123456789.h")
 // ******************************************************************* //
 
-#include "STUDENT_NUMBER.h"
+#include "ES216BB_EVMakeup_Header.h"
 
 // ******************************************************************* //
 
@@ -28,32 +28,32 @@ int main(void)
 {
     int choice;
 
-    CourseEnrollment Course;
+    HotelReservation Room;
 
-    string Course_Code = "INF101";
-    string Course_Title = "Introduction to Information Systems";
-    int Course_MaxStudents = 12;
-    float EnrollmentFee = 1200.00;
+    string Room_Number = "H205";
+    string Room_Type = "Standard King";
+    int Room_MaxOccupancy = 12;
+    float RoomRate = 950.75;
 
     ifstream BookingFile;
-    string Enrollment_File = "TextFile_CourseEnrollment.txt";
-    string StudentName;
+    string Guest_File = "ReservationHotelList.txt";
+    string GuestName;
 
-    Course.SetDetails(Course_Code, Course_Title, Course_MaxStudents);
+    Room.SetDetails(Room_Number, Room_Type, Room_MaxOccupancy);
 
     do
     {
         system("cls");
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
-        cout << "   Course Enrollment System" << endl;
+        cout << "   Hotel Reservation System" << endl;
         cout << "   ES216BB" << endl;
-        cout << "   Evaluation 3" << endl;
+        cout << "   Evaluation Makeup" << endl;
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
         cout << endl;
-        cout << "1. Display Course Details" << endl;
-        cout << "2. Load Student Enrollments" << endl;
-        cout << "3. Display Student List" << endl;
-        cout << "4. Display Enrollment Revenue" << endl;
+        cout << "1. Display Reservation Details" << endl;
+        cout << "2. Load Guest Reservations" << endl;
+        cout << "3. Display Guest List" << endl;
+        cout << "4. Display Reservation Revenue" << endl;
         cout << "5. Exit" << endl;
         cout << "Choice: ";
         cin >> choice;
@@ -62,25 +62,25 @@ int main(void)
         switch (choice)
         {
             case 1:
-                Course.DisplayCourseDetails();
+                Room.DisplayReservationDetails();
                 cout << endl;
                 break;
             case 2:
-                cout << "All possible enrollments loaded" << endl;
+                cout << "All possible reservations loaded" << endl;
 
-                BookingFile.open(Enrollment_File);
-                while (BookingFile >> StudentName)
-                    Course.AddStudent(StudentName);
+                BookingFile.open(Guest_File);
+                while (BookingFile >> GuestName)
+                    Room.AddGuest(GuestName);
                 BookingFile.close();
 
                 cout << endl;
                 break;
             case 3:
-                Course.DisplayStudentList();
+                Room.DisplayGuestList();
                 cout << endl;
                 break;
             case 4:
-                cout << "Enrollment Revenue: R" << Course.EnrollmentRevenue(EnrollmentFee) << endl;
+                cout << "Reservation Revenue: R" << Room.ReservationRevenue(RoomRate) << endl;
                 cout << endl;
                 break;
             case 5:
