@@ -57,7 +57,7 @@
         // Uncomment: JScript "window.onload" function and CSS "display: none" 
         function passwordPrompt() {
             const password = prompt("Please enter the password:");
-            if (password === "123999") {
+            if (password === "135246") {
                 document.querySelector('.container').style.display = 'block';
             } else {
                 alert("Incorrect password! Reloading...");
@@ -67,7 +67,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("Oct 31, 2025 11:05:00 GMT+0200").getTime();
+            const countdownDate = new Date("May 18, 2026 12:35:00 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -96,7 +96,7 @@
         // Download function
         function downloadFiles1() {
             const files = [
-                'Files/ES216BB_EVMakeup.pdf',
+                'Files/ES216AB_EV3.pdf',
             ];
 
             files.forEach(file => {
@@ -110,7 +110,7 @@
         }
         function downloadFiles2() {
             const files = [
-                'Files/ES216BB_EVMakeup_Header_Template.h',
+                'Files/ES216AB_EV3_template.c',
             ];
 
             files.forEach(file => {
@@ -122,7 +122,7 @@
                 document.body.removeChild(a);
             });
         }
-        function downloadFiles3() {
+        /*function downloadFiles3() {
             const files = [
                 'Files/ES216BB_EVMakeup_Main.cpp',
             ];
@@ -163,7 +163,7 @@
                 a.click();
                 document.body.removeChild(a);
             });
-        }
+        }*/
         
         // Auto-refresh every 10 minutes (600000 ms)
         setTimeout(function() {
@@ -203,6 +203,7 @@
             <button class="download-button" onclick="downloadFiles2()"><b>Template H File</b></button>
             &nbsp;&nbsp;
             
+            <!--
             <button class="download-button" onclick="downloadFiles3()"><b>Demo CPP File  </b></button>
             &nbsp;&nbsp;
 
@@ -210,6 +211,7 @@
             &nbsp;&nbsp;
             
             <button class="download-button" onclick="downloadFiles5()"><b>Demo EXE File  </b></button>
+            -->
 
 
         </div>
