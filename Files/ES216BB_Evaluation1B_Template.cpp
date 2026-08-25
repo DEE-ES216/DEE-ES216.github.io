@@ -24,31 +24,31 @@
 
 using namespace std;
 
-string systemName = "Solar Inverter Diagnostic System";
+string systemName = "Wind Turbine Maintenance Planner";
 
-struct InverterTest
+struct ServiceTask
 {
-    int inverterID;
-    float dcInput;
-    float acOutput;
-    char stateCode;
-    float diagnosticValue;
-    void InitialiseInverterTest(int id, float dc, float ac, char sCode, float value);
+    int turbineID;
+    int daysSinceService;
+    float operatingHours;
+    char typeCode;
+    float serviceValue;
+    void InitialiseServiceTask(int id, int days, float hours, char typeCode, float value);
 };
 
 int TextFileLineCount(string fileName);
-void ReadFileAndPopulate(string fileName, InverterTest **tests, int *arraySize);
-inline float CalculateEfficiency(InverterTest test);
-void DisplaySystemName();
-void DisplayInverterTests(InverterTest *tests, int arraySize, bool faultsOnly = false);
-void WriteFaultReport(InverterTest *tests, int arraySize);
-void DeleteInverterArray(InverterTest **tests, int *arraySize);
+void ReadFileAndPopulate(string fileName, ServiceTask **tasks, int *arraySize);
+string CalculateServicePriority(ServiceTask task);
+void DisplayServiceTask(ServiceTask task);
+void DisplayServiceTasks(ServiceTask *tasks, int arraySize, int dueDays = 180);
+void WriteMaintenancePlan(ServiceTask *tasks, int arraySize);
+void DeleteServiceArray(ServiceTask **tasks, int *arraySize);
 
 int main()
 {
-    InverterTest referenceTest;
-    referenceTest.InitialiseInverterTest(0, 0.0, 0.0, 'P', 0.0); // dot operator
-    InverterTest *tests = nullptr;
+    ServiceTask referenceTask;
+    referenceTask.InitialiseServiceTask(0, 0, 0.0f, 'R', 0.0f); // static structure and dot operator
+    ServiceTask *tasks = nullptr;
     int arraySize = 0;
     int choice = 0;
     string fileName;
@@ -60,10 +60,10 @@ int main()
         cout << "ES216BB" << endl;
         cout << "Evaluation 1" << endl << endl;
 
-        cout << "1. Load inverter tests" << endl;
-        cout << "2. Display all test results" << endl;
-        cout << "3. Display warnings and faults" << endl;
-        cout << "4. Export fault alerts" << endl;
+        cout << "1. Load service tasks" << endl;
+        cout << "2. Display one task" << endl;
+        cout << "3. Display due tasks" << endl;
+        cout << "4. Export maintenance plan" << endl;
         cout << "5. Exit\nChoice: ";
 
         if (!(cin >> choice))
@@ -74,32 +74,33 @@ int main()
         }
         cout << endl;
 
-        switch (choice)
+        if (choice == 1)
         {
-            case 1:
-                cout << "Input file: ";
-                cin >> fileName;
-                ReadFileAndPopulate(fileName, &tests, &arraySize);
-                break;
-            case 2:
-                DisplaySystemName();
-                DisplayInverterTests(tests, arraySize);
-                break;
-            case 3:
-                DisplayInverterTests(tests, arraySize, true);
-                break;
-            case 4:
-                WriteFaultReport(tests, arraySize);
-                break;
-            case 5:
-                DeleteInverterArray(&tests, &arraySize);
-                cout << "Diagnostic application closed.\n";
-                cout << "\nPress any key to continue...";
-                _getch();
-                return 0;
-            default:
-                cout << "Invalid choice.\n";
+            cout << "Input file: ";
+            cin >> fileName;
+            ReadFileAndPopulate(fileName, &tasks, &arraySize);
         }
+        else if (choice == 2)
+        {
+            if (tasks && arraySize)
+                DisplayServiceTask(tasks[0]);
+            else
+                cout << "No service tasks are loaded.\n";
+        }
+        else if (choice == 3)
+            DisplayServiceTasks(tasks, arraySize);
+        else if (choice == 4)
+            WriteMaintenancePlan(tasks, arraySize);
+        else if (choice == 5)
+        {
+            DeleteServiceArray(&tasks, &arraySize);
+            cout << "Maintenance planner closed.\n";
+            cout << "\nPress any key to continue...";
+            _getch();
+            return 0;
+        }
+        else
+            cout << "Invalid choice.\n";
 
         cout << "\nPress any key to continue...";
         _getch();
@@ -110,7 +111,7 @@ int main()
 
 // FUNCTION IMPLEMENTATION
 //------------------------------------------------------------------------------//
-// 1. InitialiseInverterTest
+// 1. InitialiseServiceTask
 //------------------------------------------------------------------------------//
 // Student Function Code - Delete this comment
 
@@ -125,27 +126,27 @@ int main()
 // Student Function Code - Delete this comment
 
 //------------------------------------------------------------------------------//
-// 4. CalculateEfficiency
+// 4. CalculateServicePriority
 //------------------------------------------------------------------------------//
 // Student Function Code - Delete this comment
 
 //------------------------------------------------------------------------------//
-// 5. DisplaySystemName
+// 5. DisplayServiceTask (overloaded)
 //------------------------------------------------------------------------------//
 // Student Function Code - Delete this comment
 
 //------------------------------------------------------------------------------//
-// 6. DisplayInverterTests
+// 6. DisplayServiceTasks (default argument)
 //------------------------------------------------------------------------------//
 // Student Function Code - Delete this comment
 
 //------------------------------------------------------------------------------//
-// 7. WriteFaultReport
+// 7. WriteMaintenancePlan
 //------------------------------------------------------------------------------//
 // Student Function Code - Delete this comment
 
 //------------------------------------------------------------------------------//
-// 8. DeleteInverterArray
+// 8. DeleteServiceArray
 //------------------------------------------------------------------------------//
 // Student Function Code - Delete this comment
 
