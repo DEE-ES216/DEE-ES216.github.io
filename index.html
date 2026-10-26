@@ -57,7 +57,7 @@
         // Uncomment: JScript "window.onload" function and CSS "display: none" 
         function passwordPrompt() {
             const password = prompt("Please enter the password:");
-            if (password === "123412341234") {
+            if (password === "a2026es") {
                 document.querySelector('.container').style.display = 'block';
             } else {
                 alert("Incorrect password! Reloading...");
@@ -67,7 +67,7 @@
 
         // Countdown Timer
         function startCountdown() {
-            const countdownDate = new Date("Sep 7, 2026 10:45:00 GMT+0200").getTime();
+            const countdownDate = new Date("Oct 27, 2026 12::30 GMT+0200").getTime();
 
             const interval = setInterval(function() {
                 const now = new Date().getTime();
@@ -96,7 +96,7 @@
         // Download function
         function downloadFiles1() {
             const files = [
-                'Files/ES216BB_EV2.pdf',
+                'Files/ES216BB_Evaluation3A_QuestionPaper.pdf',
             ];
 
             files.forEach(file => {
@@ -110,7 +110,7 @@
         }
         function downloadFiles2() {
             const files = [
-                'Files/template_EV2.cpp',
+                'Files/ES216BB_Evaluation3A.cpp',
             ];
 
             files.forEach(file => {
@@ -124,7 +124,7 @@
         }
         function downloadFiles3() {
             const files = [
-                'Files/EV2_Demo.old',
+                'Files/ES216BB_Evaluation3A_TemplateHeader.h',
             ];
 
             files.forEach(file => {
@@ -138,7 +138,7 @@
         }
         function downloadFiles4() {
             const files = [
-                'Files/energy.txt',
+                'Files/TextFile_EquipmentLoan.txt',
             ];
 
             files.forEach(file => {
@@ -150,9 +150,9 @@
                 document.body.removeChild(a);
             });
         }
-        /*function downloadFiles5() {
+        function downloadFiles5() {
             const files = [
-                'Files/ES216BB_EVMakeup_Showcase.old',
+                'Files/ES216BB_Evaluation3A.old',
             ];
 
             files.forEach(file => {
@@ -163,7 +163,7 @@
                 a.click();
                 document.body.removeChild(a);
             });
-        }*/
+        }
         
         // Auto-refresh every 10 minutes (600000 ms)
         setTimeout(function() {
@@ -197,17 +197,19 @@
             - Evaluation Showcase EXE File -<br>
             -->
             
-            <button class="download-button" onclick="downloadFiles1()"><b>Question Paper </b></button>
+            <button class="download-button" onclick="downloadFiles1()"><b>Question Paper</b></button>
             &nbsp;&nbsp;
             
-            <button class="download-button" onclick="downloadFiles2()"><b>Template CPP File</b></button>
+            <button class="download-button" onclick="downloadFiles2()"><b>CPP File</b></button>
             &nbsp;&nbsp;
             
+            <button class="download-button" onclick="downloadFiles3()"><b>Template Header File</b></button>
+            &nbsp;&nbsp;
             
-            <button class="download-button" onclick="downloadFiles3()"><b>Demo OLD File  </b></button>
+            <button class="download-button" onclick="downloadFiles4()"><b>TXT File</b></button>
             &nbsp;&nbsp;
 
-            <button class="download-button" onclick="downloadFiles4()"><b>TXT File  </b></button>
+            <button class="download-button" onclick="downloadFiles5()"><b>Demo OLD File</b></button>
             &nbsp;&nbsp;
             
             <!--
@@ -218,10 +220,15 @@
         </div>
 
         <div class="section">
-            <h3>Evaluation 2 Submission</h3>
+            <h3>Evaluation 3 Submission</h3>
                    
-           <div data-fillout-id="gmWtp6gizMus" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
-            
+            <!-- Electrical -->
+            <div data-fillout-id="rVPpCmPpNTus" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
+                
+            <!-- Mechatronic -->
+            <!--
+            <div data-fillout-id="nEmUgmHiqCus" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="large"></div><script src="https://server.fillout.com/embed/v1/"></script>
+            -->
             
         </div>
         
