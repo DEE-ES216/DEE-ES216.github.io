@@ -28,32 +28,32 @@ int main(void)
 {
     int choice;
 
-    EquipmentLoan Equipment;
+    WorkshopRegistration Workshop;
 
-    string First_Detail = "3D Printer";
-    string Second_Detail = "Innovation Lab";
+    string First_Detail = "Arduino Fundamentals";
+    string Second_Detail = "Dr Ndlovu";
     int Maximum_Entries = 12;
-    float LoanFee = 250.00;
+    float RegistrationFee = 325.00;
 
     ifstream DataFile;
-    string Data_File = "TextFile_EquipmentLoan.txt";
-    string BorrowerName;
+    string Data_File = "TextFile_WorkshopRegistration.txt";
+    string ParticipantName;
 
-    Equipment.SetDetails(First_Detail, Second_Detail, Maximum_Entries);
+    Workshop.SetDetails(First_Detail, Second_Detail, Maximum_Entries);
 
     do
     {
         system("cls");
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
-        cout << "   Laboratory Equipment Loan System" << endl;
+        cout << "   Workshop Registration System" << endl;
         cout << "   ES216BB" << endl;
         cout << "   Evaluation 3" << endl;
         cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
         cout << endl;
-        cout << "1. Display Equipment Details" << endl;
-        cout << "2. Load Equipment Borrowers" << endl;
-        cout << "3. Display Borrower List" << endl;
-        cout << "4. Display Loan Revenue" << endl;
+        cout << "1. Display Workshop Details" << endl;
+        cout << "2. Load Participant Registrations" << endl;
+        cout << "3. Display Participant List" << endl;
+        cout << "4. Display Registration Revenue" << endl;
         cout << "5. Exit" << endl;
         cout << "Choice: ";
         cin >> choice;
@@ -62,25 +62,25 @@ int main(void)
         switch (choice)
         {
             case 1:
-                Equipment.DisplayEquipmentDetails();
+                Workshop.DisplayWorkshopDetails();
                 cout << endl;
                 break;
             case 2:
-                cout << "All possible borrowers loaded" << endl;
+                cout << "All possible participants loaded" << endl;
 
                 DataFile.open(Data_File);
-                while (DataFile >> BorrowerName)
-                    Equipment.AddBorrower(BorrowerName);
+                while (DataFile >> ParticipantName)
+                    Workshop.AddParticipant(ParticipantName);
                 DataFile.close();
 
                 cout << endl;
                 break;
             case 3:
-                Equipment.DisplayBorrowerList();
+                Workshop.DisplayParticipantList();
                 cout << endl;
                 break;
             case 4:
-                cout << "Loan Revenue: R" << Equipment.LoanRevenue(LoanFee) << endl;
+                cout << "Registration Revenue: R" << Workshop.RegistrationRevenue(RegistrationFee) << endl;
                 cout << endl;
                 break;
             case 5:
